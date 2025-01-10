@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,17 +11,19 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         h1 {
             color: #333;
             text-align: center;
+            font-size: clamp(1.5rem, 4vw, 2rem);
         }
         .team-card {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            padding: 20px;
+            padding: 15px;
         }
         .team-header {
             background-color: #f0f7ff;
@@ -32,6 +35,7 @@
             font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 5px;
+            word-wrap: break-word;
         }
         .team-info {
             color: #666;
@@ -43,7 +47,7 @@
             margin-top: 10px;
         }
         th, td {
-            padding: 12px;
+            padding: 12px 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -53,6 +57,47 @@
         }
         tr:hover {
             background-color: #f8f9fa;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            
+            .team-card {
+                padding: 10px;
+            }
+
+            .team-header {
+                padding: 10px;
+            }
+
+            /* Make table scrollable horizontally */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 8px 6px;
+                min-width: 80px;
+            }
+
+            /* Optional: Stack table on very small screens */
+            @media screen and (max-width: 480px) {
+                .team-info {
+                    font-size: 0.8em;
+                }
+                
+                th, td {
+                    font-size: 0.9em;
+                }
+            }
         }
     </style>
 </head>
@@ -67,40 +112,42 @@
                     Club: Bronkhorstspruit | Section: 11 | Venue: Pta Municipals
                 </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Round</th>
-                        <th>Time</th>
-                        <th>VS Team</th>
-                        <th>VS Club</th>
-                        <th>Rink</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>08:30</td>
-                        <td>v Tubbergh, Heleen / Page, Belinde</td>
-                        <td>PHSOB</td>
-                        <td>C4</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>11:30</td>
-                        <td>Kruger, Bessie / Wilken, Marcèl</td>
-                        <td>Wingate Park</td>
-                        <td>C5</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>14:00</td>
-                        <td>Bultman, Charmaine / v Wyngaardt, A / Janzen, Lia</td>
-                        <td>R@M Bowls Club</td>
-                        <td>C2</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Round</th>
+                            <th>Time</th>
+                            <th>VS Team</th>
+                            <th>VS Club</th>
+                            <th>Rink</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>08:30</td>
+                            <td>v Tubbergh, Heleen / Page, Belinde</td>
+                            <td>PHSOB</td>
+                            <td>C4</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>11:30</td>
+                            <td>Kruger, Bessie / Wilken, Marcèl</td>
+                            <td>Wingate Park</td>
+                            <td>C5</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>14:00</td>
+                            <td>Bultman, Charmaine / v Wyngaardt, A / Janzen, Lia</td>
+                            <td>R@M Bowls Club</td>
+                            <td>C2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="team-card">
